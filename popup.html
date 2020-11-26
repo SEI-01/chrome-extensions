@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        width: 320px;
+        height: 350px;
+        margin: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+      .noselect {
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+      }
+      .name {
+        margin: 5px 0px;
+      }
+      .main_image {
+        margin-bottom: 5px;
+      }
+      .buttons,
+      .option_tab,
+      .page_tab,
+      .page_tab_list,
+      .tabs_tab,
+      .tabs_tab_list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      button {
+        all: unset;
+        width: 267.5px;
+        height: 20px;
+        background-color: white;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
+          0 1px 3px rgba(0, 0, 0, 0.08);
+        border-radius: 3px;
+        text-align: center;
+        font-weight: 700;
+        text-transform: uppercase;
+        cursor: pointer;
+        margin: 5px 0px;
+      }
+      button:active {
+        transform: scale(0.97);
+      }
+      .tab_btn {
+        width: 100px;
+        height: 30px;
+        border-radius: 0px;
+        box-shadow: none;
+      }
+      .tab_btn:active {
+        transform: none;
+      }
+      #page_tab_btn {
+        border-left: none;
+        border-right: none;
+      }
+
+      .pageorderBtn {
+        display: inline-block;
+        width: 10px;
+        height: 20px;
+        margin-right: 2px;
+        cursor: pointer;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
+          0 1px 3px rgba(0, 0, 0, 0.08);
+      }
+      .pageBox,
+      .tabsBox {
+        display: flex;
+        align-items: center;
+        justify-items: center;
+      }
+
+      .pageBtn,
+      .tabsBtn {
+        width: 250px;
+      }
+      .editForm,
+      .TeditForm {
+        all: unset;
+        width: 250px;
+        height: 20px;
+        background-color: white;
+        border: 1px solid black;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
+          0 1px 3px rgba(0, 0, 0, 0.08);
+        border-radius: 3px;
+        text-align: center;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .placeholderRed::-webkit-input-placeholder {
+        color: red;
+      }
+      .pageBtn,
+      .editForm,
+      .tabsBtn,
+      .TeditForm {
+        text-transform: none;
+      }
+      .delBtn,
+      .editBtn,
+      .TdelBtn,
+      .TeditBtn {
+        width: 34px;
+        margin-left: 5px;
+      }
+
+      .delBtn:active,
+      .editBtn:active,
+      .TdelBtn:active,
+      .TeditBtn:active {
+        transform: scale(0.9);
+      }
+      .nav_btn {
+        display: flex;
+      }
+
+      .contextMenu {
+        border: 1px solid black;
+        width: 70px;
+        height: 25px;
+      }
+      .contextMenuBG {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .page-foot,
+      .tabs-foot {
+        width: 100%;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        bottom: 0;
+        background-color: white;
+      }
+      .page-add,
+      .tabs-add {
+        position: fixed;
+        bottom: 2px;
+        right: 15px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
+
+      .page-remove,
+      .tabs-remove {
+        position: fixed;
+        bottom: 2px;
+        left: 15px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
+      .page-add:active,
+      .page-remove:active,
+      .tabs-add:active,
+      .tabs-remove:active {
+        transform: scale(0.95);
+      }
+      .page-add-img,
+      .page-remove-img,
+      .tabs-add-img,
+      .tabs-remove-img {
+        width: 20px;
+        height: 20px;
+      }
+      .page_tab_list,
+      .tabs_tab_list {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body class="noselect">
+    <div class="name" style="font-weight: 800">Chrome APP (SEI-01)</div>
+    <img class="main_image" src="icon128.png" alt="icon" />
+    <div class="buttons">
+      <div class="nav_btn" id="nav_btn">
+        <button class="tab_btn" id="option_tab_btn">options</button>
+        <button
+          class="tab_btn"
+          id="page_tab_btn"
+          style="
+            background-color: rgba(0, 0, 0, 0.1);
+            color: rgba(0, 0, 0, 0.5);
+          "
+        >
+          page
+        </button>
+        <button
+          class="tab_btn"
+          id="tabs_tab_btn"
+          style="
+            background-color: rgba(0, 0, 0, 0.1);
+            color: rgba(0, 0, 0, 0.5);
+          "
+        >
+          tabs
+        </button>
+      </div>
+      <div class="option_tab" id="option_tab" style="display: flex">
+        <button id="mute"></button>
+        <button id="js_toggle" style="display: none"></button>
+        <button id="setting">setting</button>
+      </div>
+      <div class="page_tab" id="page_tab" style="display: none">
+        <div class="page_tab_list" id="page_tab_list"></div>
+        <div class="page-foot">
+          <div class="page-remove" id="page-remove">
+            <img src="./icons/etc/minus.png" alt="" class="page-remove-img" />
+          </div>
+          <div class="page_description">
+            ※ 빈 버튼을 클릭하여 <strong>현재 탭</strong>을 저장하세요.<br />
+          </div>
+          <div class="page-add" id="page-add">
+            <img src="./icons/etc/plus.png" alt="" class="page-add-img" />
+          </div>
+        </div>
+      </div>
+      <div id="tabs_tab" class="tabs_tab" style="display: none">
+        <div class="tabs_tab_list" id="tabs_tab_list"></div>
+        <div class="tabs-foot">
+          <div class="tabs-remove" id="tabs-remove">
+            <img src="./icons/etc/minus.png" alt="" class="tabs-remove-img" />
+          </div>
+          <div class="tabs_description">
+            ※ 빈 버튼을 클릭하여 <strong>모든 탭</strong>을 저장하세요.<br />
+          </div>
+          <div class="tabs-add" id="tabs-add">
+            <img src="./icons/etc/plus.png" alt="" class="tabs-add-img" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contextMenuBG" id="contextMenuBG" style="display: none"></div>
+
+    <script src="background.js"></script>
+  </body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="css/weather.css" />
+    <link rel="stylesheet" href="css/clock.css" />
+    <link rel="stylesheet" href="css/icons.css" />
+    <link rel="stylesheet" href="css/form.css" />
+    <link rel="stylesheet" href="css/todos.css" />
+    <script type="module" src="js/weather.js"></script>
+    <script type="module" src="js/clock.js"></script>
+    <script type="module" src="js/form.js"></script>
+    <script type="module" src="js/icons.js"></script>
+    <script type="module" src="js/todos.js"></script>
+    <script type="module" src="js/default.js"></script>
+    <title>새 탭</title>
+  </head>
+  <body>
+    <div class="weather_container">
+      <div class="weather_box">
+        <div class="weather_icon_wrapper" id="weather_icon">
+          <img src="icons/weather/unknown.png" class="weather_icon" />
+        </div>
+        <div class="weather_info_wrapper">
+          <div class="weather_location noselect" id="location">Seoul</div>
+          <div class="weather_temperature noselect" id="temperature">00ºC</div>
+        </div>
+      </div>
+    </div>
+    <div class="time_container noselect">
+      <div class="clockForm">
+        <div class="time" id="clock">
+          <div class="main">
+            <span class="time-number" id="hour"></span>
+            <span class="time-number dots">:</span>
+            <span class="time-number" id="minute"></span>
+          </div>
+          <div class="sub">
+            <span class="time-period" id="ampm"></span>
+            <span class="time-number" id="second"></span>
+          </div>
+        </div>
+        <div class="date_box" id="date"></div>
+      </div>
+    </div>
+    <div class="icons_container">
+      <div class="icons_box">
+        <div class="icon_wrapper" id="icon_wrapper1" n="1">
+          <div class="link_option" id="link_option1" n="1">
+            <img
+              class="link_option_IMG noselect"
+              id="LOIMG1"
+              src="icons/etc/op.png"
+              style="display: none"
+              n="1"
+            />
+          </div>
+          <div class="icon" n="1">
+            <img
+              class="favicon noselect"
+              id="favicon1"
+              src="icons/etc/favicon.png"
+              n="1"
+            />
+          </div>
+          <div class="icon_title noselect" id="title1" n="1"></div>
+        </div>
+        <div class="icon_wrapper" id="icon_wrapper2" n="2">
+          <div class="link_option" id="link_option2" n="2">
+            <img
+              class="link_option_IMG noselect"
+              id="LOIMG2"
+              src="icons/etc/op.png"
+              style="display: none"
+              n="2"
+            />
+          </div>
+          <div class="icon" n="2">
+            <img
+              class="favicon noselect"
+              id="favicon2"
+              src="icons/etc/favicon.png"
+              n="2"
+            />
+          </div>
+          <div class="icon_title noselect" id="title2" n="2"></div>
+        </div>
+        <div class="icon_wrapper" id="icon_wrapper3" n="3">
+          <div class="link_option" id="link_option3" n="3">
+            <img
+              class="link_option_IMG noselect"
+              id="LOIMG3"
+              src="icons/etc/op.png"
+              style="display: none"
+              n="3"
+            />
+          </div>
+          <div class="icon" n="3">
+            <img
+              class="favicon noselect"
+              id="favicon3"
+              src="icons/etc/favicon.png"
+              n="3"
+            />
+          </div>
+          <div class="icon_title noselect" id="title3" n="3"></div>
+        </div>
+        <div class="icon_wrapper" id="icon_wrapper4" n="4">
+          <div class="link_option" id="link_option4" n="4">
+            <img
+              class="link_option_IMG noselect"
+              id="LOIMG4"
+              src="icons/etc/op.png"
+              style="display: none"
+              n="4"
+            />
+          </div>
+          <div class="icon" n="4">
+            <img
+              class="favicon noselect"
+              id="favicon4"
+              src="icons/etc/favicon.png"
+              n="4"
+            />
+          </div>
+          <div class="icon_title noselect" id="title4" n="4"></div>
+        </div>
+        <div class="icon_wrapper" id="icon_wrapper5" n="5">
+          <div class="link_option" id="link_option5" n="5">
+            <img
+              class="link_option_IMG noselect"
+              id="LOIMG5"
+              src="icons/etc/op.png"
+              style="display: none"
+              n="5"
+            />
+          </div>
+          <div class="icon" n="5">
+            <img
+              class="favicon noselect"
+              id="favicon5"
+              src="icons/etc/favicon.png"
+              n="5"
+            />
+          </div>
+          <div class="icon_title noselect" id="title5" n="5"></div>
+        </div>
+        <div class="icon_wrapper" id="icon_wrapper6" n="6">
+          <div class="link_option" id="link_option6" n="6">
+            <img
+              class="link_option_IMG noselect"
+              id="LOIMG6"
+              src="icons/etc/op.png"
+              style="display: none"
+              n="6"
+            />
+          </div>
+          <div class="icon" n="6">
+            <img
+              class="favicon noselect"
+              id="favicon6"
+              src="icons/etc/favicon.png"
+              n="6"
+            />
+          </div>
+          <div class="icon_title noselect" id="title6" n="6"></div>
+        </div>
+        <div class="icon_wrapper" id="icon_wrapper7" n="7">
+          <div class="link_option" id="link_option7" n="7">
+            <img
+              class="link_option_IMG noselect"
+              id="LOIMG7"
+              src="icons/etc/op.png"
+              style="display: none"
+              n="7"
+            />
+          </div>
+          <div class="icon" n="7">
+            <img
+              class="favicon noselect"
+              id="favicon7"
+              src="icons/etc/favicon.png"
+              n="7"
+            />
+          </div>
+          <div class="icon_title noselect" id="title7" n="7"></div>
+        </div>
+        <div class="icon_wrapper" id="icon_wrapper8" n="8">
+          <div class="link_option" id="link_option8" n="8">
+            <img
+              class="link_option_IMG noselect"
+              id="LOIMG8"
+              src="icons/etc/op.png"
+              style="display: none"
+              n="8"
+            />
+          </div>
+          <div class="icon" n="8">
+            <img
+              class="favicon noselect"
+              id="favicon8"
+              src="icons/etc/favicon.png"
+              n="8"
+            />
+          </div>
+          <div class="icon_title noselect" id="title8" n="8"></div>
+        </div>
+        <div class="icon_wrapper" id="icon_wrapper9" n="9">
+          <div class="link_option" id="link_option9" n="9">
+            <img
+              class="link_option_IMG noselect"
+              id="LOIMG9"
+              src="icons/etc/op.png"
+              style="display: none"
+              n="9"
+            />
+          </div>
+          <div class="icon" n="9">
+            <img
+              class="favicon noselect"
+              id="favicon9"
+              src="icons/etc/favicon.png"
+              n="9"
+            />
+          </div>
+          <div class="icon_title noselect" id="title9" n="9"></div>
+        </div>
+        <div class="icon_wrapper" id="icon_wrapper10" n="10">
+          <div class="link_option" id="link_option10" n="10">
+            <img
+              class="link_option_IMG noselect"
+              id="LOIMG10"
+              src="icons/etc/op.png"
+              style="display: none"
+              n="10"
+            />
+          </div>
+          <div class="icon" n="10">
+            <img
+              class="favicon noselect"
+              id="favicon10"
+              src="icons/etc/favicon.png"
+              n="10"
+            />
+          </div>
+          <div class="icon_title noselect" id="title10" n="10"></div>
+        </div>
+      </div>
+    </div>
+    <div class="link_modify_container" id="link_modify_container">
+      <div class="link_modify_form">
+        <div class="LMURL">
+          <span class="LMSpan">링크 추가/수정</span>
+          <input
+            type="text"
+            name="link_input"
+            class="link_input noselect"
+            id="link_input"
+            placeholder="URL을 입력하세요."
+            n="0"
+          />
+          <button class="inputBtn" id="link_input_btn" n="0">입력</button>
+        </div>
+        <div class="LMName">
+          <span class="LMSpan">이름 변경</span>
+          <input
+            type="text"
+            name="name_input"
+            class="name_input noselect"
+            id="name_input"
+            maxlength="40"
+            placeholder="사이트 이름을 변경하세요."
+            n="0"
+          />
+          <button class="inputBtn" id="name_input_btn" n="0">변경</button>
+        </div>
+        <div class="LMInfoText">
+          <div class="LMinfo" id="link_modify_info" n="0"></div>
+        </div>
+      </div>
+    </div>
+    <div class="todos_container">
+      <div class="todos_btn_wrapper">
+        <button class="todolist_button noselect" id="todolistBtn">
+          <img
+            src="./icons/etc/check_list.png"
+            alt=""
+            class="todoCheckIMG"
+            id="todolistBtnIMG"
+          />
+        </button>
+      </div>
+      <div class="list_wrapper noselect" id="list_wrapper">
+        <div class="listTitleBar">
+          <div class="listTitle">Check List</div>
+        </div>
+        <div class="listContent">
+          <div class="empty" id="listContentEmpty" style="display: none">
+            EMPTY
+          </div>
+          <div
+            class="todolistWrapper"
+            id="todolistWrapper"
+            style="display: flex"
+          >
+            <!-- todolist N with JS -->
+          </div>
+        </div>
+        <div class="listFooter">
+          <textarea
+            class="todoInput"
+            wrap="hard"
+            cols="20"
+            maxlength="40"
+            rows="2"
+            spellcheck="false"
+            id="todoInput"
+            n="1"
+            placeholder="최대 40자까지 입력할 수 있습니다."
+          ></textarea>
+          <button class="todoInputBtn" id="todoInputBtn">✔</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- <div class="todolistDate" id="listD1" n="1"></div> -->
+
+<!-- <div class="todolistBtns" id="listBtns1" n="1">
+                <div class="todolistClear" id="listCL1" n="1">
+                  <img
+                    src="./icons/etc/check1.png"
+                    alt="check"
+                    class="todoMenuBtn"
+                    id="listCL_img1"
+                    n="1"
+                  />
+                </div>
+                <div class="todolistDel" id="listDel1" n="1">
+                  <img
+                    src="./icons/etc/del1.png"
+                    alt="x"
+                    class="todoMenuBtn"
+                    id="listDel_img1"
+                    n="1"
+                  />
+                </div>
+              </div> -->
+
+<!-- <div class="todolistState" id="listS1" n="1"></div> -->
+
+<!-- 
+<div class="todolist" id="list1" state="default" n="1">
+  <div
+    class="todolistContents"
+    id="listC1"
+    n="1"
+    style="display: flex"
+  ></div>
+  <div class="todolistDelBtn" id="listDel1" n="1">
+    <img
+      class="todolistDelIMG"
+      src="./icons/etc/listDel.png"
+      alt="X"
+    />
+  </div>
+</div> -->

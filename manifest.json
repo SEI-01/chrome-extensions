@@ -1,0 +1,28 @@
+{
+  "name": "Smart Chrome APP",
+  "version": "1.0",
+  "description": "Smart Chrome APP by SEI-01",
+  "browser_action": {
+    "default_icon": "icon128.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "options_page": "setting.html",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "unlimitedStorage",
+    "contextMenus",
+    "storage",
+    "geolocation",
+    "https://*/",
+    "http://*/"
+  ],
+  "icons": { "128": "icon128.png" },
+  "manifest_version": 2
+}

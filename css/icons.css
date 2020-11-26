@@ -1,0 +1,76 @@
+.icons_container {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icons_box {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /* margin-top: 50px; */
+  width: 650px;
+  height: 250px;
+  align-items: center;
+  justify-items: center;
+}
+
+.icons_box .icon_wrapper {
+  margin: 0px;
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+}
+.icons_box .icon_wrapper:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.icons_box .icon_wrapper:active {
+  background-color: rgba(0, 0, 0, 0.07);
+}
+
+.icon_wrapper .link_option {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 30px;
+}
+
+.icon_wrapper .link_option_IMG {
+  width: 30px;
+  height: 30px;
+  opacity: 0.3;
+}
+
+.icon_wrapper .link_option_IMG:hover {
+  opacity: 0.8;
+}
+
+.icon_wrapper .icon {
+  position: relative;
+  top: -15px;
+  left: 25px;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon .favicon {
+  position: relative;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+.icon_wrapper .icon_title {
+  position: relative;
+  top: -7.5px;
+  text-align: center;
+  font-size: 12px;
+  overflow-wrap: break-word;
+}
