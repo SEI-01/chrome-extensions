@@ -163,15 +163,17 @@ function todolistNumber() {
 }
 
 function HTMLmake(todo) {
+  const empty = document.getElementById("listContentEmpty");
   const parent = document.getElementById("todolistWrapper");
   const n = todo.length;
   console.log(n);
 
   if (n === 0) {
-    const empty = document.getElementById("listContentEmpty");
     empty.style.display = "flex";
     parent.style.display = "none";
   } else {
+    empty.style.display = "none";
+    parent.style.display = "flex";
     let html = "";
     let i = 1;
     while (i < n + 1) {

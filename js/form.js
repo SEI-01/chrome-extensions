@@ -104,6 +104,17 @@ function saveName() {
   }
 }
 
+function delLink() {
+  const name = document.getElementById("name_input");
+  const number = name.getAttribute("n");
+  const NT_URL_N = "New Tab url" + number;
+  const NT_TITLE_N = "New Tab title" + number;
+  chrome.storage.sync.remove([NT_URL_N, NT_TITLE_N]);
+  link_modify_exit();
+  icons_show_init();
+  info.innerText = "";
+}
+
 function init() {
   const modify_container = document.getElementById("link_modify_container");
   modify_container.addEventListener("click", (event) => {
@@ -113,10 +124,12 @@ function init() {
   });
   const input_btn = document.getElementById("link_input_btn");
   const name_btn = document.getElementById("name_input_btn");
+  const del_btn = document.getElementById("link_del_btn");
   const input = document.getElementById("link_input");
   const name = document.getElementById("name_input");
   input_btn.addEventListener("click", saveLink);
   name_btn.addEventListener("click", saveName);
+  del_btn.addEventListener("click", delLink);
   input.addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
       saveLink();

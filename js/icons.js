@@ -6,7 +6,13 @@ function gotolink(event) {
   if (event.target.className === "link_option_IMG noselect") {
   } else {
     chrome.storage.sync.get([NT_URL_N], (result) => {
-      location.href = result[NT_URL_N];
+      const url = result[NT_URL_N];
+      if (url === undefined) {
+        // 링크가 없을 때
+        return;
+      } else {
+        location.href = url;
+      }
     });
   }
 }
@@ -33,7 +39,7 @@ function loadFavicon(number) {
 function loadTitle(number) {
   const title = document.getElementById(`title${number}`);
   const NT_TITLE_N = "New Tab title" + number;
-  chrome.storage.sync.get([NT_TITLE_N], (result) => {
+  chrome.storage.sync.get({ [NT_TITLE_N]: "등록되지 않음" }, (result) => {
     title.innerText = result[NT_TITLE_N];
   });
 }
