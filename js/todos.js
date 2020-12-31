@@ -154,19 +154,10 @@ function loadTodo() {
   });
 }
 
-function todolistNumber() {
-  return new Promise((resolve) => {
-    chrome.storage.sync.get({ numberOfTodo: 0 }, (r) => {
-      resolve(r["numberOfTodo"]);
-    });
-  });
-}
-
 function HTMLmake(todo) {
   const empty = document.getElementById("listContentEmpty");
   const parent = document.getElementById("todolistWrapper");
   const n = todo.length;
-  console.log(n);
 
   if (n === 0) {
     empty.style.display = "flex";
@@ -209,31 +200,12 @@ async function input_init() {
   input();
 }
 
-// TEST REMOVEALL
-async function TEST_REMOVE_ALL() {
-  const n = await todolistNumber();
-  let i = 1;
-  while (i < n + 1) {
-    const todolistN = "todolist" + i;
-    const todostateN = "todostate" + i;
-    const tododateN = "tododate" + i;
-
-    chrome.storage.sync.remove([todolistN, todostateN, tododateN]);
-
-    i++;
-  }
-
-  chrome.storage.sync.remove("numberOfTodo");
-  chrome.storage.sync.remove("todolist");
-}
-
 async function init() {
   let todo = await loadTodo();
 
   HTMLmake(todo);
   input_init();
 
-  // TEST_REMOVE_ALL();
   const todolistBtn = document.getElementById("todolistBtn");
   todolistBtn.addEventListener("click", todolistOnOff);
   const number = todo.length;

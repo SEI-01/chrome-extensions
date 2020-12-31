@@ -1,7 +1,6 @@
 import { weather_init } from "./weather.js";
 import { clock_init } from "./clock.js";
-import { link_modify_init } from "./form.js";
-import { icons_show_init } from "./icons.js";
+import { link_init } from "./link.js";
 import { todo_init, todolistOnOff } from "./todos.js";
 
 //////////// Default
@@ -30,8 +29,7 @@ function init() {
   default_init();
   weather_init();
   clock_init();
-  icons_show_init();
-  link_modify_init();
+  link_init();
   todo_init();
 }
 
